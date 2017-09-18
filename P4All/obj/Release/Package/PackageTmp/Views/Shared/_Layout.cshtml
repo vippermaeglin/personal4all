@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - P4All</title>
+    @Styles.Render("~/Content/bootstrap.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container" style="font-size:20px">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                    <img style="height:70px" ID="Logo" runat="server" src="~/images/logme_logo.jpeg" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><BR />@Html.ActionLink("Início", "Index", "Home")</li>
+                    <li><BR />@Html.ActionLink("Como Funciona", "About", "Home")</li>
+                    <li><BR />@Html.ActionLink("Acesso Restrito", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+        <footer>
+            <div style="background-color:#FFFFFF;width:100%;left:0;padding:0;position:absolute;text-align:center;">
+                <br />
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-3" style="text-align:center;">
+                        <a href="http://www.fundacity.com/personal4all2" target="_blank">
+                            <img src="~/images/facebook.png" alt="ASP.NET" />
+                            <h2>FUNDACITY</h2>
+                            <p>personal4all2</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3" style="text-align:center;">
+                        <a href="https://twitter.com/personal4all" target="_blank">
+                            <img src="~/images/instagram.png" alt="ASP.NET" />
+                            <h2>TWITTER</h2>
+                            <p>personal4all</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3" style="text-align:center;">
+                        <a href="mailto:eduardo@personal4all.com.br">
+                            <img src="~/images/email.png" alt="ASP.NET" />
+                            <h2>EMAIL</h2>
+                            <p>eduardo@personal4all.com.br</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3" style="text-align:center;">
+                        <a href="tel:+5531975600252">
+                            <img src="~/images/whatsapp.png" alt="ASP.NET" />
+                            <h2>WHATSAPP</h2>
+                            <p>(31)99982-4962</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row" style="color:white">
+                    <br />
+                    <br />
+                    <p>&copy; @DateTime.Now.Year - P4All</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
